@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         edit = (EditText)findViewById(R.id.edit);
 
         //以下是从文件中读取数据
-
         String inputText = load();
         if(!TextUtils.isEmpty(inputText)){
             edit.setText(inputText);
@@ -38,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         String inputText = edit.getText().toString();
+        //这里是保存数据的时机
         save(inputText);
     }
 
